@@ -27,6 +27,7 @@
     "react-gauge-chart": "^0.2.5",
     "react-google-charts": "^3.0.15",
     "react-image": "^2.4.0",
+    "react-loadingg": "^1.7.2",
     "react-native": "^0.62.2",
     "react-native-semi-circular-gauge": "^2.0.2",
     "react-player": "^2.0.0",
