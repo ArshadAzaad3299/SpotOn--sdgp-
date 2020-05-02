@@ -1,0 +1,422 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.homeSearchBar{
+  display: none;
+}
+
+.searchBox{
+  width: 200px;
+  color: aqua;
+
+}
+
+.form-submit-button {
+
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 11px 22px;
+  text-decoration: none;
+  margin: 1px 2px;
+  cursor: pointer;
+  border-radius: 22px;
+  
+  }
+
+.searchBUtton{
+  position: relative;
+  bottom:8px;
+  right: 32px;
+}
+.searchAlert{
+  position: absolute;
+  left: 45%;
+
+}
+
+.navbar-text{
+  position: relative;
+  right: 10px;
+  top: 6px;
+}
+
+.AppLogo{
+  position: relative;
+  text-align: center;
+  top: 100px;
+}
+
+.welcomeAnimation{
+  position: absolute;
+  bottom: 220px;
+}
+  
+.topTrendingRow{
+  padding-top: 20px;
+  position: relative;
+  bottom: 20px;
+  /* float: left; */
+  /* bottom: 200px; */
+  
+}
+
+.predicted-box{
+  border-radius: 1px;
+  box-shadow: 0px 0px 0px 8px rgba(0,0,0,0.3);
+
+}
+.topTrendingRow-1{
+  padding-top: 20px;
+  position: relative;
+  bottom: 20px;
+  /* float: left; */
+  /* bottom: 200px; */
+  
+}
+
+
+
+.topSearch-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  font-size: 50px;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  color: teal;
+  font-weight: bold;
+}
+
+
+.main {
+  animation-name: slideDown;
+  animation-duration: 2s;
+  margin-right: 8px;
+}
+
+.heading {
+  animation-name: slideUp;
+  animation-duration: 2s;
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  80% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  80% {
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.ant-progress-circle-wrap,
+.ant-progress-line-wrap {
+  margin-right: 8px;
+  margin-bottom: 5px;
+}
+
+
+.Line1{
+  width: 100%;
+  height: 20px;
+}
+
+.Summary{
+  float: left;
+}
+
+.isTrending{
+  float: right;
+  position: relative;
+  bottom: 330px;  
+}
+
+.youtubeResults{
+  height: 100%px;
+  width: 300px
+}
+
+.box-youtube {
+  position: relative; 
+  float: right;  
+  padding-right: 50px;
+  right: 120px;
+}
+
+.risingSearches{
+  padding-left: 8px;
+  padding-bottom: 6px;
+  text-align: justify;
+  color: white;
+}
+
+.topics{
+  padding-left: 8px;
+}
+
+.dBox{
+  padding-top: 0.2px;
+  padding-bottom: 5px;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
+
+.box-newsresults {
+  position: relative; 
+  float: right;  
+  padding-right: 50px;
+  right: 120px;
+
+
+}
+
+.line-1{
+  height: 300px;
+  width: 100%;
+  position: absolute;
+  /* background-color: beige; */
+}
+
+.line-2-left{
+
+  text-align: left;
+  
+  
+  }
+  
+  .line-2-right{
+    position: relative;
+    float: right;
+    padding-right: 30px;  
+    padding-left: 30px; 
+    bottom: 200px; 
+    }
+
+.line-2{
+   height: 400px;  
+  width: 100%;
+  position: absolute;
+  bottom: 100px; 
+  /* background-color: blue; */
+}
+
+.line-3{
+  height: 800px;  
+  width: 100%;
+  position: absolute;
+  top:760px;
+  /* background-color:palegreen; */
+}
+
+.line-3-1{
+  position: relative;
+  float: left;
+  padding-left: 200px;
+}
+.line-3-2{
+  position: relative;
+  float: right;
+  padding-right: 500px;
+}
+
+.graph-line-1{
+  height: 420px;  
+  width: 100%;
+  position: absolute;
+  top:1090px;
+  /* background-color:green; */
+}
+
+.graph1{
+  float: left;
+  position: relative;
+  top: 50px;
+  padding-left: 15px;
+
+
+
+}
+.graph2{
+  /* text-align: right; */
+  float:right;
+  
+
+
+}
+
+.line-4{
+  height: 500px;  
+  width: 100%;
+  position: absolute;
+  top:1550px;
+  padding-left: 0px;
+  /* background-color:brown; */
+}
+
+.line-4-left{
+
+float: left;
+
+
+}
+
+.line-4-right{
+  position: relative;
+  float: left;
+  padding-right: 10px;  
+  padding-left: 60px;  
+  }
+.line-5{
+  height: 400px;  
+  width: 100%;
+  position: absolute;
+  top:1900px;
+  /* background-color:pink; */
+}
+.line-6{
+  height: 400px;  
+  width: 100%;
+  position: absolute;
+  top:2300px;
+  /* background-color:white; */
+}
+.line-7{
+  height: 400px;  
+  width: 100%;
+  position: absolute;
+  top:2700px;
+  /* background-color:white; */
+}
+
+
+.graph-top{
+  position: relative;
+  bottom: 20px;
+  left: 60px;
+}
+
+.arrow{
+  position: relative;
+  right: 230px;
+}
+
+.nointernet{
+  text-align: center;
+  position: relative;
+  top: 200px;
+}
+
+.box-browse{
+padding: 60px;}
+
+.browse-border{
+  height: 100%;
+  border: 1px Solid white;
+  padding: 30px;
+  border-radius: 22px;
+}
+
+.line1{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+padding-bottom: 10px;
+
+}
+.line2{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+.line3{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+
+.browse-item-text{
+  color: white;
+}
+
+.browse-image{
+  max-width: 100%;
+    height: 250px
+}
+
+.subscribe-box{
+  /* background-color: red; */
+  display: -webkit-inline-flex;
+  position: relative;
+  right: 10px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  align-items: center
+
+}
