@@ -11,7 +11,7 @@ import React from 'react';
 class loading extends React.Component {
 
     render() {
-        setTimeout(() => window.location = "./results", 5000);
+        setTimeout(() => window.location = "./results", 20000);
         // setTimeout(() => axios.get('http://localhost:5000/search/add/load/'), 5000);
         return (
             <div>

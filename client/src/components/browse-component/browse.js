@@ -8,7 +8,6 @@ import SportstImg from '../../img/sports.jpg'
 import PoliticsImg from '../../img/pol.jpg'
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Radio from '@material-ui/core/Radio';
-
 import Button from '@material-ui/core/Button';
 
 /*
@@ -16,7 +15,9 @@ Class to Display 6 items [images] of user preferences based on Topics and allows
 a radio button and loads to page which dislpays latest topic content
 */
 
-class BankForm extends React.Component {
+
+
+class Browse extends React.Component {
 
     //constructor
     constructor() {
@@ -81,13 +82,13 @@ class BankForm extends React.Component {
                 console.log(error)
             })
 
-        
+
     }
 
     //render method to display front end content
 
     render() {
-        return (    
+        return (
             <div>
                 <div className="box-browse">
                     <form onSubmit={this.onSubmit}>
@@ -129,7 +130,7 @@ class BankForm extends React.Component {
                             <div className="line3">
                                 <div className="item-1">
 
-                                    <Button variant="contained" color="secondary" onClick={e => this.onSubmit(e)} style={{width:'100px', height:'40px'}}>
+                                    <Button variant="contained" color="secondary" onClick={e => this.onSubmit(e)} style={{ width: '100px', height: '40px' }}>
                                         OK
                                  </Button>
 
@@ -140,12 +141,8 @@ class BankForm extends React.Component {
                     </form>
 
                 </div>
-
-
-
-
             </div>
         );
     }
 }
-export default BankForm
+export default Browse

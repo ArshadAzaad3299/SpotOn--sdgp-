@@ -10,10 +10,13 @@ let MostSearched = require('../models/mostSearched.model');
 let Similarsearches = require('../models/similarSearches.mode');
 let PredictedEvents = require('../models/predictedEvents.model');
 let CategoryRelated = require('../models/CategoryRelated.model');
+let TopFiveTweets = require('../models/TopTweets.Model');
+let TopFiveHashTag = require('../models/topFiveHashtage.Model');
 
 
-
-
+//THis class gets requests from React Dashboard and returns values from MongoScheme using Axios
+/*Each component in React request from a specific url location and those requests are handled in this class
+the required Mongo Schemes are passed from each route to acces values in MongoDB*/
 
 const mongoose = require('mongoose');
 
@@ -107,6 +110,37 @@ router.route('/categoryrelated/').get((req, res) => {
         
 })
 
+
+
+router.route('/topfivetweets/').get((req, res) => {
+
+    // mongoose.connect('mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/' + "corona" + '?retryWrites=true&w=majority', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+
+    // // mongoose.connect('mongodb://localhost:27017/' + dbName + '?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false', { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true });
+
+    // const connection = mongoose.connection;
+    // //log if connection to Mongo Succes
+    // connection.once('open', () => {
+    //     console.log("MongoDB Database connection Success to " );
+    // })
+    console.log('Top 5 Tweets requested')
+
+    TopFiveTweets.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(400).json('Error:' + err));
+
+        
+})
+
+router.route('/topfivehashtag/').get((req, res) => {
+    console.log('Top HashTag requested')
+
+    TopFiveHashTag.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(400).json('Error:' + err));
+
+        
+})
 
 
 

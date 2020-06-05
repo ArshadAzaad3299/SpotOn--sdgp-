@@ -10,13 +10,11 @@ import React from 'react';
 
 class loading extends React.Component {
 
- 
-
     render() {
 
-
-        setTimeout(() => window.location = "./results", 25000);
+        setTimeout(() => window.location = "./results", 110000);
         setTimeout(() => axios.get('http://localhost:5000/search/add/load/'), 5000);
+
         return (
             <div>
                 {this.ShowAlertWithDelay}

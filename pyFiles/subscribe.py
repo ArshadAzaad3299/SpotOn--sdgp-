@@ -8,7 +8,11 @@ import pymongo
 from random import randint
 
 from pymongo import MongoClient
-client = MongoClient("localhost", 27017, maxPoolSize=50)
+# client = MongoClient("localhost", 27017, maxPoolSize=50)
+
+#mongodb Atlas
+client =MongoClient('mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/whatIsSearchedToday?authSource=admin&replicaSet=sdgp1-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true')
+
 db = client.test  # test connection if connected
 
 #Get Keyword passed from React to Node

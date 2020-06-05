@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-
 import Button from '@material-ui/core/Button';
-
 import Paper from '@material-ui/core/Paper';
 
+
+//constant which populates the array based on the MongoDb Collection Scheme passed From Node
 const TopSearch = props => (
     <div>
-
         <div className="risingSearches">
             {props.topresults.ID}
             <br></br>
-            
-
             <Button variant="outlined" color="primary" style={{ color: 'white', paddingBottom:'5px' }} >
                 <a href={props.topresults.Title} style={{ textDecoration: 'none', color: '#A0E8F6' }}>Learn More</a>
             </Button>
@@ -21,7 +18,9 @@ const TopSearch = props => (
     </div >
 )
 
-export default class ExercisesList extends Component {
+//This class Displays the Predcited events For User Searched Keyword
+
+export default class PredictedEvents extends Component {
     constructor(props) {
         super(props);
 
@@ -30,6 +29,8 @@ export default class ExercisesList extends Component {
 
 
     }
+    /*This Component runs first once the component is rendered
+This is the best place to make API calls since, at this point, the component has been mounted and is available to the DOM*/
 
     componentDidMount() {
         axios.get('http://localhost:5000/search/results/predictedevents')
@@ -42,13 +43,12 @@ export default class ExercisesList extends Component {
             })
     }
 
-
+//mapping the values of the array
     resultList() {
         return this.state.results.map(currentSearch => {
             return <TopSearch topresults={currentSearch} key={currentSearch._id} />
         })
     }
-
 
     render() {
         return (

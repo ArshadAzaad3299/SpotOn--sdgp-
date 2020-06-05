@@ -1,8 +1,6 @@
+//Importing Required Modules
 import React, { Component } from 'react';
 import axios from 'axios';
-
-
-
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
@@ -12,12 +10,8 @@ import Skeleton from '@material-ui/lab/Skeleton';
 import Button from '@material-ui/core/Button';
 
 
-
-
-
+//constant which populates results from the array based on the column id of collection in MongoDB
 const TopSearch = props => (
-
-
     <div>
         <div class="box-newsresults">
             <Card style={{ backgroundColor: "#353431", width: "300px", color: 'white', padding: '10px' }}>
@@ -46,18 +40,13 @@ const TopSearch = props => (
                 </Button>
             </Card>
             <div>
-
             </div>
-
         </div>
-
-
-
     </div >
 )
 
-
-export default class ExercisesList extends Component {
+//This class diaplays the related News in card format in UI
+export default class NewsRelatedClass extends Component {
 
     constructor(props) {
         super(props);
@@ -67,6 +56,8 @@ export default class ExercisesList extends Component {
 
 
     }
+/*This Component runs first once the component is rendered
+This is the best place to make API calls since, at this point, the component has been mounted and is available to the DOM*/
 
     componentDidMount() {
         axios.get('http://localhost:5000/search/results/newsrelated')
@@ -79,7 +70,7 @@ export default class ExercisesList extends Component {
             })
     }
 
-
+//This function maps the values from the array
     resultList() {
         return this.state.results.map(currentSearch => {
             return <TopSearch topresults={currentSearch} key={currentSearch._id} />
@@ -87,7 +78,7 @@ export default class ExercisesList extends Component {
     }
 
 
-
+//Render function which diaplays content in UI
     render() {
         return (
             <div>

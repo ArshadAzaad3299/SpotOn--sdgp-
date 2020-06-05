@@ -7,13 +7,18 @@ import NoInternet from '../home-component/NoInternet'
 import Button from '@material-ui/core/Button';
 
 
-class HomePage extends React.Component {
+
+/*This component allows the user to enter a desired email which is sent to Node and python And the user 
+recieves today top trends via email*/
+
+class Subscribe extends React.Component {
   constructor(props) {
     super(props);
+    // This binding is necessary to make `this` work in the callback
 
     this.onChangeSearch = this.onChangeSearch.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-
+    //setting the state of the variables
     this.state = {
       search: '',
 
@@ -22,7 +27,7 @@ class HomePage extends React.Component {
 
     }
   }
-
+  //Validation Function to make sure email conotains '@'
   validate = () => {
     let searchError: '',
       input = "Invalid Email"
@@ -39,7 +44,7 @@ class HomePage extends React.Component {
         {input}
       </Alert>
       </div>
-      ;
+        ;
     }
 
     if (searchError) {
@@ -54,6 +59,8 @@ class HomePage extends React.Component {
       search: e.target.value
     });
   }
+
+  //Submit Action which sends the email to NodeJs via Axios
 
   onSubmit(e) {
     e.preventDefault();
@@ -115,25 +122,21 @@ class HomePage extends React.Component {
             />
             <Button
               style={{
-                left:'15px',
-                position:'relative',
-                height:'47px',
-                width:'90px',
+                left: '15px',
+                position: 'relative',
+                height: '47px',
+                width: '90px',
                 borderRadius: 15,
                 backgroundColor: "#21b6ae",
                 // padding: "18px 36px",
                 fontSize: "18px",
-                
+
               }}
               onClick={e => this.onSubmit(e)}
               variant="contained"
             >
               Submit
             </Button>
-            {/* <Button className="searchBUtton" color="primary" aria-label="add" onClick={e => this.onSubmit(e)} style={{ width: '65px', height: '65px' }}>
-
-              <SearchRoundedIcon></SearchRoundedIcon>
-            </Button> */}
 
             <div style={{ color: '#eb1473' }}>{this.state.searchError}</div>
 
@@ -147,4 +150,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage
+export default Subscribe

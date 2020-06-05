@@ -1,13 +1,13 @@
+//This component displays the results after User Picks the category that he/she prefers
+
 import React, { Component } from 'react';
 import axios from 'axios';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 
 
-
-
+//populate the results from array according to MongoDB Collection
 const TopSearch = props => (
-
 
     <div>
         <div class="box-newsresults">
@@ -23,17 +23,14 @@ const TopSearch = props => (
 )
 
 
-export default class ExercisesList extends Component {
+export default class BrowseResults extends Component {
 
     constructor(props) {
         super(props);
-
-
         this.state = { results: [] }
-
-
     }
 
+    
     componentDidMount() {
         axios.get('http://localhost:5000/browse/browseresults')
             .then(response => {
@@ -42,13 +39,8 @@ export default class ExercisesList extends Component {
             })
             .catch((error) => {
                 console.log(error)
-            })
-
-        
+            })        
     }
-
-    
-
 
     resultList() {
         return this.state.results.map(currentSearch => {

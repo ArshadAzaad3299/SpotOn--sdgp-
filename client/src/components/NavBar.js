@@ -7,7 +7,9 @@ import SearchRoundedIcon from '@material-ui/icons/SearchRounded';
 import ListAltRoundedIcon from '@material-ui/icons/ListAltRounded';
 import EqualizerRoundedIcon from '@material-ui/icons/EqualizerRounded';
 
+//This class contains the Navigation bar which is used in All Windows
 
+//material UI Constant for styles
 const StyledTabs = withStyles({
   indicator: {
     display: 'flex ',
@@ -56,6 +58,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
+//Functional Component which returns the Navigation Bar
 export default function CustomizedTabs() {
 
   const classes = useStyles();

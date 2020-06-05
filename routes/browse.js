@@ -4,6 +4,9 @@ var keyword;
 var userPreferences;
 let BrowseResults = require('../models/browseresults.model');
 
+/*This route class interacts with the browse component in react which handles the post and get requests 
+through axios
+Then the python scripts are called within functions (News Prediction) and values are stored in MongoDB*/
 
 router.route('/input').post((req, res) => {
     const searchTerm = req.body.search;

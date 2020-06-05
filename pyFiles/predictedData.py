@@ -4,9 +4,9 @@ from gnewsclient import gnewsclient
 import pymongo
 import random
 import wikipedia
-from pymongo import MongoClient
 import tweepy
 import datetime
+from pymongo import MongoClient
 from datetime import date
 from pytrends.request import TrendReq
 import urllib
@@ -18,6 +18,8 @@ import nltk
 import pycountry
 import sys
 
+#This class contains the code which interacts with API's such as Twitter, Google , Youtube and Process Them according to 
+#the input
 
 
 #Get Keyword passed from React to Node
@@ -26,6 +28,8 @@ userCategoryFromNode = sys.argv[2]
 
 # keyword to Search + Category
 keywordToSearch = userKeywordFromNode
+
+#if keyword contains a country name first Character is uppercase
 for country in pycountry.countries:
     keywordToSearch = keywordToSearch.title()
     if country.name in keywordToSearch:
@@ -38,8 +42,10 @@ user_keyword_list = [keywordToSearch]
 user_category = userCategoryFromNode
 
 # connect to Mongo DB Server
-# client = MongoClient("mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/test?retryWrites=true&w=majority") #atlas
-client =MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+client = MongoClient("mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/test?retryWrites=true&w=majority") #atlas
+    
+#local server
+# client =MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
 db = client.test  # test connection if connected
 
 # establishing connection with google trends
@@ -54,6 +60,8 @@ from datetime import datetime
 
 dateTimeObj = datetime.now()
 clientdatabaseName = keywordToSearch.replace(" ", "")
+
+#if Database was already created on same day python script will not run
 dbnames = client.list_database_names()
 if clientdatabaseName in dbnames:
     #     client.drop_database(clientdatabaseName)
@@ -73,6 +81,8 @@ if clientdatabaseName in dbnames:
 elif clientdatabaseName.lower() in dbnames:
     client.drop_database(clientdatabaseName.lower())
 
+
+#Similar Tweets Collection
 db = client[clientdatabaseName]
 db.similartweets.drop()  # delete collection to have fresh collection
 similartweetsCollection = db['similartweets']  # new collection for Similar Tweets according to Category
@@ -90,7 +100,7 @@ entertainment = ['TwitterMovies', 'hypem']
 space = ['SpaceX', 'space', 'NASA']
 politics = ['politics']
 tech = ['TheNextWeb', 'recode', 'TechCrunch']
-health_environment = ['MedlinePlus', 'goodhealth', 'World_Wildlife']
+health = ['MedlinePlus', 'goodhealth', 'World_Wildlife']
 
 category_account = ''
 
@@ -118,8 +128,8 @@ elif user_category == "tech":
     category_account = random.choice(tech)
 elif user_category == "politics":
     category_account = random.choice(politics)
-elif user_category == "health_environment":
-    category_account = random.choice(health_environment)
+elif user_category == "health":
+    category_account = random.choice(health)
 else:
     category_account = 'cnnbrk '
 
@@ -417,7 +427,11 @@ except:
     print("No Goolge News")
 
 # connect to Mongo DB Server
-client = MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+# client = MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+# connect to Mongo DB Server
+client = MongoClient("mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/test?retryWrites=true&w=majority") #atlas
+
+
 db = client.test  # test connection if connected
 db = client[clientdatabaseName]  # open database if not available will be created
 
@@ -647,7 +661,7 @@ def google_Search():
 
 # if category is in the below list CSE [Custome Search Engine] will be used
 
-CSE_search = ['politics', 'business', 'health_environment']
+CSE_search = ['politics', 'business', 'health']
 predictedCountry = []
 predictedCountryString = ''
 CSE_search_true = 0

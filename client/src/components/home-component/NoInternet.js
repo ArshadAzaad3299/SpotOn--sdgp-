@@ -2,11 +2,13 @@
 import { CountdownCircleTimer } from 'react-countdown-circle-timer'
 import React from 'react';
 
+/*This Components displays the Ui When The source launching the Server is Offline and tries to reconnect with
+a duaration of 3 secons*/
 
 class NoInternet extends React.Component {
 
 
-
+//render UI 
     render() {
         setTimeout(() => window.location = "/", 3000);
         return (

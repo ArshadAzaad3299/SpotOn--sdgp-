@@ -8,7 +8,7 @@ import Card from '@material-ui/core/Card';
 
 
 
-
+//constant to populate results from array and mongo column id
 const TopSearch = props => (
     <div>
 
@@ -20,13 +20,10 @@ const TopSearch = props => (
             id="standard-error-helper-text"
             defaultValue={props.topresults.MostSearchedDate}
         />
-
-
-
     </div >
 )
-
-export default class ExercisesList extends Component {
+//This class displays the most searched date of the keyword searched
+export default class MostSearchedDateClass extends Component {
     constructor(props) {
         super(props);
 
@@ -35,6 +32,8 @@ export default class ExercisesList extends Component {
 
 
     }
+/*This Component runs first once the component is rendered
+This is the best place to make API calls since, at this point, the component has been mounted and is available to the DOM*/
 
     componentDidMount() {
         axios.get('http://localhost:5000/search/results/mostsearcheddate')
@@ -47,14 +46,14 @@ export default class ExercisesList extends Component {
             })
     }
 
-
+//this functions maps the array values
     resultList() {
         return this.state.results.map(currentSearch => {
             return <TopSearch topresults={currentSearch} key={currentSearch._id} />
         })
     }
 
-
+//
     render() {
         return (
             <div>

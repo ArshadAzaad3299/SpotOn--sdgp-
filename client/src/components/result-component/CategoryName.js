@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 
-
+//constatant to populate results from Array
 const TopSearch = props => (
     <div>
 
@@ -11,7 +11,9 @@ const TopSearch = props => (
     </div >
 )
 
-export default class ExercisesList extends Component {
+//Class which populates the Category Name
+
+export default class CategoryName extends Component {
     constructor(props) {
         super(props);
 
@@ -20,6 +22,8 @@ export default class ExercisesList extends Component {
 
 
     }
+    /*This Component runs first once the component is rendered
+This is the best place to make API calls since, at this point, the component has been mounted and is available to the DOM*/
 
     componentDidMount() {
         axios.get('http://localhost:5000/search/results/nameAndCategory')

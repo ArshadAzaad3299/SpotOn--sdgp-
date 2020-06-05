@@ -12,7 +12,11 @@ user_get = sys.argv[1]
 #Establishing connection to MongoDB
 import pymongo
 from pymongo import MongoClient
-client = MongoClient("localhost", 27017, maxPoolSize=50)
+# client = MongoClient("localhost", 27017, maxPoolSize=50)
+# connect to Mongo DB Server
+client = MongoClient("mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/test?retryWrites=true&w=majority") #atlas
+
+
 db = client.test  # test connection if connected
 
 user_preferences=user_get

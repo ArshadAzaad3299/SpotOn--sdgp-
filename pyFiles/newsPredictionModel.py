@@ -7,7 +7,11 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 import pymongo
 from pymongo import MongoClient
-client =MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+# client =MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+# connect to Mongo DB Server
+client = MongoClient("mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/test?retryWrites=true&w=majority") #atlas
+
+
 db = client.test  # test connection if connected
 
 db = client['newscategory']     #open database if not available will be created

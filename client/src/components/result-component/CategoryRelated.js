@@ -9,24 +9,16 @@ import CategoryName from './CategoryName'
 
 const TopSearch = props => (
 
-
     <div>
         <div class="box-newsresults">
             <Card style={{ backgroundColor: "#353431", width: "300px", color: 'white', padding: '10px' }}>
                 <CardHeader
                     title={props.topresults.title}
                 ></CardHeader>
-
-                
             </Card>
             <div>
-
             </div>
-
         </div>
-
-
-
     </div >
 )
 
@@ -41,6 +33,8 @@ export default class ExercisesList extends Component {
 
 
     }
+    /*This Component runs first once the component is rendered
+This is the best place to make API calls since, at this point, the component has been mounted and is available to the DOM*/
 
     componentDidMount() {
         axios.get('http://localhost:5000/search/results/categoryrelated')
@@ -50,21 +44,14 @@ export default class ExercisesList extends Component {
             })
             .catch((error) => {
                 console.log(error)
-            })
-
-        
+            })        
     }
-
-    
-
 
     resultList() {
         return this.state.results.map(currentSearch => {
             return <TopSearch topresults={currentSearch} key={currentSearch._id} />
         })
     }
-
-
 
     render() {
         return (

@@ -335,24 +335,31 @@ float: left;
   height: 400px;  
   width: 100%;
   position: absolute;
-  top:1900px;
+  top:2040px;
   /* background-color:pink; */
 }
 .line-6{
   height: 400px;  
   width: 100%;
   position: absolute;
-  top:2300px;
+  top:2400px;
   /* background-color:white; */
 }
 .line-7{
   height: 400px;  
   width: 100%;
   position: absolute;
-  top:2700px;
+  top:2800px;
   /* background-color:white; */
 }
 
+.line-8{
+  height: 400px;  
+  width: 100%;
+  position: absolute;
+  top:3400px;
+  /* background-color:white; */
+}
 
 .graph-top{
   position: relative;

@@ -6,10 +6,10 @@ import NoInternet from './home-component/NoInternet'
 
 import React from 'react';
 
-
+//This class Contains the Welcome Page displaying the App Logo and then following to the home page
 class Welcome extends React.Component {
 
-
+//render which retuns a reference to the component
     render() {
         setTimeout(() => window.location = "./spoton", 4000);
 

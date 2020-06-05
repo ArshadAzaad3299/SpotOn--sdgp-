@@ -3,10 +3,11 @@ import pymongo
 import pandas as pd
 from pytrends.request import TrendReq
 
-
-
 #connect to Mongo DB Server
-client =MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+# client =MongoClient("mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=false")
+
+#mongodb Atlas
+client =MongoClient('mongodb+srv://root1:sdgp1234@sdgp1-fmfys.mongodb.net/whatIsSearchedToday?authSource=admin&replicaSet=sdgp1-shard-0&readPreference=primary&appname=MongoDB%20Compass%20Community&ssl=true')
 
 db = client.test             #test connection if connected
 
@@ -26,6 +27,8 @@ try:
     df=df.head(6)
 except:
     print("Less Than 6 values")
+
+#Convert DataFrame to Dictionary and send values to MongoDb Collection
 data=df
 whatIsSearchedToday=data
 data.reset_index(inplace=True)

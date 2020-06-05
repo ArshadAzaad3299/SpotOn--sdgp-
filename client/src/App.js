@@ -26,7 +26,7 @@ import PredictedEvents from './components/result-component/predictedevents'
 import CategoryRelated from './components/result-component/CategoryRelated'
 import NoInternet from './components/home-component/NoInternet'
 import Subscribe from './components/subscribe/subscribe'
-
+import TopFiveTweets from './components/result-component/TopFiveTweets'
 
 
 import LoadtoTop from './components/top-searches/loadto-topSearches'
@@ -65,10 +65,7 @@ function App() {
       <Route path="/spoton/search/nointernet" exact component={NoInternet}/>
       <Route path="/spoton/browse/loading" exact component={BrowseLoading}/>
       <Route path="/spoton/browse/results" exact component={BrowseResults}/>
-
-
-      
-
+      <Route path="/spoton/browse/results/topfivetweets" exact component={TopFiveTweets}/>
 
       {/* <Route path="/browse" exact component={Sample}/> */}
       {/* <Route path="/home" exact component={Sample}/> */}
